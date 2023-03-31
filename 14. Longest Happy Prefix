@@ -1,0 +1,14 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if(strs.length==0){ //if length is 0 , returning empty string
+            return "";
+        }
+        String prefix = strs[0]; //first element of string is considered as prefix fully
+        for(int i=1;i<strs.length;i++){ //looping through the given string strs
+            while(strs[i].indexOf(prefix)!=0){ //if element of string doesnt match with the indexes of prefix, loop will run
+               prefix =  prefix.substring(0,prefix.length()-1); // decreasing  the length of the string, everytime there is a mismatch
+            }
+        }
+        return prefix;
+    }
+}
