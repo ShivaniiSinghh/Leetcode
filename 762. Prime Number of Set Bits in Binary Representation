@@ -1,0 +1,19 @@
+class Solution {
+    public int countPrimeSetBits(int left, int right) {
+        int counter = 0;
+        for(int i = left; i <= right; i++) {
+            if(hasPrimeBits(i)) { counter++; }
+        }
+        return counter;
+    }
+    
+    public boolean hasPrimeBits(int input) {
+        List<Integer> primes = Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19);
+        int counter = 0;
+        while(input > 0) {
+            if((input & 1) == 1) { counter++; }
+            input >>= 1;
+        }
+        return primes.contains(counter);
+    }
+}
