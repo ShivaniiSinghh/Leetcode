@@ -1,0 +1,29 @@
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int left=0, sum=0;
+        for(int i=0;i<nums.length;i++){
+            sum = sum+nums[i]; //summation of all the elements in nums array
+        }
+        for(int i=0;i<nums.length;i++){
+            sum=sum-nums[i]; //decreasing sum value
+            if(sum==left){ // we check if sum==left, if equal return that index
+                return i;
+            }
+            left = left+nums[i]; //increasing left value
+        }
+        return -1;
+    }
+}
+
+/*
+
+sum=sum+nums[i] =28
+left = 0
+last for loop will work like this : 
+for 1st iteration : sum=27 (28-1)
+                    sum!=left(28!=0)
+                       left=0+1
+after 2 iterations, sum=11 and left=11
+therefore ,         returning index of 6 i.e. 3 which is pivot index.
+
+ */
