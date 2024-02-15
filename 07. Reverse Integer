@@ -8,5 +8,6 @@ class Solution {
         if(res<Integer.MIN_VALUE || res>Integer.MAX_VALUE)
         return 0;
         return (int) res;
+
     }
 }
